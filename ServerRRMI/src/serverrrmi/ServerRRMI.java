@@ -11,11 +11,13 @@ package serverrrmi;
 import Interface.RMIDAO; //libreria propia
 
 //librerias que se importan
+import javax.swing.*;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
 import javax.management.remote.rmi.RMIServer;
+import javax.swing.JOptionPane;
 
 
 public class ServerRRMI extends UnicastRemoteObject implements RMIDAO {
@@ -38,17 +40,19 @@ public class ServerRRMI extends UnicastRemoteObject implements RMIDAO {
             System.out.println(ex.getMessage());
         }
     }
-
+    
     @Override
-    public String Compras()throws RemoteException{
+    public String Compras(int id, int num)throws RemoteException{
+        
+        return "h";
+    }
+    @Override
+    public String VerCarrito()throws RemoteException{
+        
         return "";
     }
     @Override
-    public String VerCarrito(int [] cantidad,String [][] info, int x)throws RemoteException{
-        return "";
-    }
-    @Override
-    public String VaciarCarrito ( String [][] info,int [] cantidad, int x) throws RemoteException{
+    public String VaciarCarrito ( ) throws RemoteException{
         return "";
     }
     
