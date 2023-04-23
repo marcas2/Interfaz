@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package Vista;
-
+import Vista.SeccionMujeres;
 import Interface.RMIDAO;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
@@ -26,15 +26,15 @@ public class SeccionHombres extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
     }
-
-    String [][] info={
-        {"Camiseta conjunto primavera","57.000",""},
-        {"Short conjunto primavera","79.000",""},
-        {"Hoodie conjunto primavera","120.000",""},
-        {"Zapatos conjunto primavera","315.000",""}
+    SeccionMujeres II= new SeccionMujeres();
+    String [][] seccionH={
+        {"01","Camiseta conjunto primavera","57.000",""},
+        {"02","Short conjunto primavera","79.000",""},
+        {"03","Hoodie conjunto primavera","120.000",""},
+        {"04","Zapatos conjunto primavera","315.000",""}
     };
     int [] cantidad= new int[4];
-    int canti;
+    int x,y;
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -435,7 +435,23 @@ public class SeccionHombres extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-      
+
+         try {
+            // TODO add your handling code here:==
+            x=01;
+            y=0;
+            Registry registro=LocateRegistry.getRegistry("127.0.0.1",7777);
+            RMIDAO interfaz = (RMIDAO) registro.lookup("RemotoRMI");
+            String metodo=interfaz.Compras(x,y);
+            
+            JOptionPane.showMessageDialog(null,metodo);
+            
+        } catch (RemoteException ex) {
+            Logger.getLogger(SeccionHombres.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (NotBoundException ex) {
+            Logger.getLogger(SeccionHombres.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
