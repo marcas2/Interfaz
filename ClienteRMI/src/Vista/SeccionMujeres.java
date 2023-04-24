@@ -22,7 +22,7 @@ public class SeccionMujeres extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
     }
     
-<<<<<<< HEAD
+
     //metodo que incicia el singleton
     public static SeccionMujeres getInstancia(){
         if (instancia == null)
@@ -30,8 +30,6 @@ public class SeccionMujeres extends javax.swing.JFrame {
         return instancia;
     }
 
-=======
->>>>>>> a8ac39760d1a88d5e6446f77a37cc47487fd05f3
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
