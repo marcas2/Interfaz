@@ -4,6 +4,15 @@
  */
 package Vista;
 
+import Interface.RMIDAO;
+import java.rmi.NotBoundException;
+import java.rmi.RemoteException;
+import java.rmi.registry.LocateRegistry;
+import java.rmi.registry.Registry;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author jcalp
@@ -21,7 +30,8 @@ public class SeccionBolsos extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
     }
-    
+    int x=0;
+    int y=0;
     //metodo que incicia el singleton
     public static SeccionBolsos getInstancia(){
         if (instancia == null)
@@ -78,8 +88,9 @@ public class SeccionBolsos extends javax.swing.JFrame {
         jMenuItem7 = new javax.swing.JMenuItem();
         jMenu8 = new javax.swing.JMenu();
         jMenuItem8 = new javax.swing.JMenuItem();
-        jMenu9 = new javax.swing.JMenu();
-        jMenuItem9 = new javax.swing.JMenuItem();
+        jMenu10 = new javax.swing.JMenu();
+        jMenuItem10 = new javax.swing.JMenuItem();
+        jMenuItem11 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -360,22 +371,30 @@ public class SeccionBolsos extends javax.swing.JFrame {
 
         jMenuBar2.add(jMenu8);
 
-        jMenu9.setText("Ir a pagar");
-        jMenu9.addActionListener(new java.awt.event.ActionListener() {
+        jMenu10.setText("Carrito");
+        jMenu10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenu9ActionPerformed(evt);
+                jMenu10ActionPerformed(evt);
             }
         });
 
-        jMenuItem9.setText("Pagar");
-        jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItem10.setText("Ver Carrito");
+        jMenuItem10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem9ActionPerformed(evt);
+                jMenuItem10ActionPerformed(evt);
             }
         });
-        jMenu9.add(jMenuItem9);
+        jMenu10.add(jMenuItem10);
 
-        jMenuBar2.add(jMenu9);
+        jMenuItem11.setText("Vaciar Carrito");
+        jMenuItem11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem11ActionPerformed(evt);
+            }
+        });
+        jMenu10.add(jMenuItem11);
+
+        jMenuBar2.add(jMenu10);
 
         setJMenuBar(jMenuBar2);
 
@@ -395,18 +414,82 @@ public class SeccionBolsos extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        try {
+            // TODO add your handling code here:==
+            x=9; 
+            y=8;
+            
+            Registry registro=LocateRegistry.getRegistry("127.0.0.1",7777);
+            RMIDAO interfaz = (RMIDAO) registro.lookup("RemotoRMI");
+            String metodo=interfaz.Compras(x,y);
+            
+            JOptionPane.showMessageDialog(null,metodo);
+            
+        } catch (RemoteException ex) {
+            Logger.getLogger(SeccionHombres.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (NotBoundException ex) {
+            Logger.getLogger(SeccionHombres.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        try {
+            // TODO add your handling code here:==
+            x=10; 
+            y=9;
+            
+            Registry registro=LocateRegistry.getRegistry("127.0.0.1",7777);
+            RMIDAO interfaz = (RMIDAO) registro.lookup("RemotoRMI");
+            String metodo=interfaz.Compras(x,y);
+            
+            JOptionPane.showMessageDialog(null,metodo);
+            
+        } catch (RemoteException ex) {
+            Logger.getLogger(SeccionHombres.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (NotBoundException ex) {
+            Logger.getLogger(SeccionHombres.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
+        try {
+            // TODO add your handling code here:==
+            x=11; 
+            y=10;
+            
+            Registry registro=LocateRegistry.getRegistry("127.0.0.1",7777);
+            RMIDAO interfaz = (RMIDAO) registro.lookup("RemotoRMI");
+            String metodo=interfaz.Compras(x,y);
+            
+            JOptionPane.showMessageDialog(null,metodo);
+            
+        } catch (RemoteException ex) {
+            Logger.getLogger(SeccionHombres.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (NotBoundException ex) {
+            Logger.getLogger(SeccionHombres.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
+        try {
+            // TODO add your handling code here:==
+            x=12; 
+            y=11;
+            
+            Registry registro=LocateRegistry.getRegistry("127.0.0.1",7777);
+            RMIDAO interfaz = (RMIDAO) registro.lookup("RemotoRMI");
+            String metodo=interfaz.Compras(x,y);
+            
+            JOptionPane.showMessageDialog(null,metodo);
+            
+        } catch (RemoteException ex) {
+            Logger.getLogger(SeccionHombres.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (NotBoundException ex) {
+            Logger.getLogger(SeccionHombres.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jComboBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox3ActionPerformed
@@ -429,25 +512,13 @@ public class SeccionBolsos extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox7ActionPerformed
 
-    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+    private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
         // TODO add your handling code here:
-        //MenuPrincipal
-        PaginaPrincipal a=PaginaPrincipal.getInstancia();
+        //Menu bolsos
+        SeccionBolsos a=SeccionBolsos.getInstancia();
         a.setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_jMenuItem5ActionPerformed
-
-    private void jMenu5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenu5ActionPerformed
-
-    private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
-        // TODO add your handling code here:
-        //Menu mujeres
-        SeccionMujeres a=SeccionMujeres.getInstancia();
-        a.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_jMenuItem6ActionPerformed
+    }//GEN-LAST:event_jMenuItem8ActionPerformed
 
     private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
         // TODO add your handling code here:
@@ -457,23 +528,64 @@ public class SeccionBolsos extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_jMenuItem7ActionPerformed
 
-    private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
+    private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
         // TODO add your handling code here:
-        //Menu bolsos
-        SeccionBolsos a=SeccionBolsos.getInstancia();
+        //Menu mujeres
+        SeccionMujeres a=SeccionMujeres.getInstancia();
         a.setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_jMenuItem8ActionPerformed
+    }//GEN-LAST:event_jMenuItem6ActionPerformed
 
-    private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
+    private void jMenu5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu5ActionPerformed
         // TODO add your handling code here:
+    }//GEN-LAST:event_jMenu5ActionPerformed
 
-
-    }//GEN-LAST:event_jMenuItem9ActionPerformed
-
-    private void jMenu9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu9ActionPerformed
+    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenu9ActionPerformed
+        //MenuPrincipal
+        PaginaPrincipal a=PaginaPrincipal.getInstancia();
+        a.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jMenuItem5ActionPerformed
+
+    private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
+        // TODO add your handling code here:
+        try {
+            // TODO add your handling code here:==
+            Registry registro=LocateRegistry.getRegistry("127.0.0.1",7777);
+            RMIDAO interfaz = (RMIDAO) registro.lookup("RemotoRMI");
+            String metodo=interfaz.VerCarrito();
+            String a="Carrito";
+            JOptionPane.showMessageDialog(null,metodo,a,1);
+
+        } catch (RemoteException ex) {
+            Logger.getLogger(SeccionHombres.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (NotBoundException ex) {
+            Logger.getLogger(SeccionHombres.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }//GEN-LAST:event_jMenuItem10ActionPerformed
+
+    private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
+        // TODO add your handling code here:
+        try {
+            // TODO add your handling code here:==
+            Registry registro=LocateRegistry.getRegistry("127.0.0.1",7777);
+            RMIDAO interfaz = (RMIDAO) registro.lookup("RemotoRMI");
+            String metodo=interfaz.VaciarCarrito();
+
+            JOptionPane.showMessageDialog(null,metodo);
+
+        } catch (RemoteException ex) {
+            Logger.getLogger(SeccionHombres.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (NotBoundException ex) {
+            Logger.getLogger(SeccionHombres.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jMenuItem11ActionPerformed
+
+    private void jMenu10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu10ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenu10ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -532,17 +644,18 @@ public class SeccionBolsos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JMenu jMenu10;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenu jMenu6;
     private javax.swing.JMenu jMenu7;
     private javax.swing.JMenu jMenu8;
-    private javax.swing.JMenu jMenu9;
     private javax.swing.JMenuBar jMenuBar2;
+    private javax.swing.JMenuItem jMenuItem10;
+    private javax.swing.JMenuItem jMenuItem11;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
-    private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel2;

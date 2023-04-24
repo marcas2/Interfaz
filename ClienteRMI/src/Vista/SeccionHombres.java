@@ -105,6 +105,7 @@ public class SeccionHombres extends javax.swing.JFrame {
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
         jMenuItem5 = new javax.swing.JMenuItem();
+        jMenuItem6 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -415,20 +416,28 @@ public class SeccionHombres extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu3);
 
-        jMenu5.setText("Ir a pagar");
+        jMenu5.setText("Carrito");
         jMenu5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenu5ActionPerformed(evt);
             }
         });
 
-        jMenuItem5.setText("Pagar");
+        jMenuItem5.setText("Ver Carrito");
         jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem5ActionPerformed(evt);
             }
         });
         jMenu5.add(jMenuItem5);
+
+        jMenuItem6.setText("Vaciar Carrito");
+        jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem6ActionPerformed(evt);
+            }
+        });
+        jMenu5.add(jMenuItem6);
 
         jMenuBar1.add(jMenu5);
 
@@ -453,8 +462,8 @@ public class SeccionHombres extends javax.swing.JFrame {
 
          try {
             // TODO add your handling code here:==
-            x=02;
-            y=1;
+            x=01;
+            y=0;
             
             Registry registro=LocateRegistry.getRegistry("127.0.0.1",7777);
             RMIDAO interfaz = (RMIDAO) registro.lookup("RemotoRMI");
@@ -473,20 +482,62 @@ public class SeccionHombres extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-       cantidad[1]= cantidad[1]+1;
-       JOptionPane.showMessageDialog(null,"Se ha añadido "+cantidad[1]+" al carrito.");
+         try {
+            // TODO add your handling code here:==
+            x=02;
+            y=1;
+            
+            Registry registro=LocateRegistry.getRegistry("127.0.0.1",7777);
+            RMIDAO interfaz = (RMIDAO) registro.lookup("RemotoRMI");
+            String metodo=interfaz.Compras(x,y);
+            
+            JOptionPane.showMessageDialog(null,metodo);
+            
+        } catch (RemoteException ex) {
+            Logger.getLogger(SeccionHombres.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (NotBoundException ex) {
+            Logger.getLogger(SeccionHombres.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
-       cantidad[2]= cantidad[2]+1;
-       JOptionPane.showMessageDialog(null,"Se ha añadido "+cantidad[2]+" al carrito.");
+        try {
+            // TODO add your handling code here:==
+            x=03;
+            y=2;
+            
+            Registry registro=LocateRegistry.getRegistry("127.0.0.1",7777);
+            RMIDAO interfaz = (RMIDAO) registro.lookup("RemotoRMI");
+            String metodo=interfaz.Compras(x,y);
+            
+            JOptionPane.showMessageDialog(null,metodo);
+            
+        } catch (RemoteException ex) {
+            Logger.getLogger(SeccionHombres.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (NotBoundException ex) {
+            Logger.getLogger(SeccionHombres.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
-       cantidad[3]= cantidad[3]+1;
-       JOptionPane.showMessageDialog(null,"Se ha añadido "+cantidad[3]+" al carrito.");
+       try {
+            // TODO add your handling code here:==
+            x=03;
+            y=3;
+            
+            Registry registro=LocateRegistry.getRegistry("127.0.0.1",7777);
+            RMIDAO interfaz = (RMIDAO) registro.lookup("RemotoRMI");
+            String metodo=interfaz.Compras(x,y);
+            
+            JOptionPane.showMessageDialog(null,metodo);
+            
+        } catch (RemoteException ex) {
+            Logger.getLogger(SeccionHombres.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (NotBoundException ex) {
+            Logger.getLogger(SeccionHombres.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
@@ -564,9 +615,39 @@ public class SeccionHombres extends javax.swing.JFrame {
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
         // TODO add your handling code here:
+        try {
+            // TODO add your handling code here:==
+            Registry registro=LocateRegistry.getRegistry("127.0.0.1",7777);
+            RMIDAO interfaz = (RMIDAO) registro.lookup("RemotoRMI");
+            String metodo=interfaz.VerCarrito();
 
+            JOptionPane.showMessageDialog(null,metodo,metodo,2);
+            
+        } catch (RemoteException ex) {
+            Logger.getLogger(SeccionHombres.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (NotBoundException ex) {
+            Logger.getLogger(SeccionHombres.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
     }//GEN-LAST:event_jMenuItem5ActionPerformed
+
+    private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
+        // TODO add your handling code here:
+        try {
+            // TODO add your handling code here:==
+            Registry registro=LocateRegistry.getRegistry("127.0.0.1",7777);
+            RMIDAO interfaz = (RMIDAO) registro.lookup("RemotoRMI");
+            String metodo=interfaz.VaciarCarrito();
+            
+            
+            JOptionPane.showMessageDialog(null,metodo);
+            
+        } catch (RemoteException ex) {
+            Logger.getLogger(SeccionHombres.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (NotBoundException ex) {
+            Logger.getLogger(SeccionHombres.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jMenuItem6ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -639,6 +720,7 @@ public class SeccionHombres extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel2;
