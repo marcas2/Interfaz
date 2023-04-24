@@ -21,10 +21,17 @@ import javax.swing.JOptionPane;
 
 
 public class ServerRRMI extends UnicastRemoteObject implements RMIDAO {
-
+    String [][] seccionH;
+    String [][] carroCompras;
     public ServerRRMI() throws RemoteException{
-            super();
-        }
+        super();
+        seccionH = new String[][]{
+            {"01","Camiseta conjunto primavera","57.000",""},
+            {"02","Short conjunto primavera","79.000",""},
+            {"03","Hoodie conjunto primavera","120.000",""},
+            {"04","Zapatos conjunto primavera","315.000",""}
+        };
+    }
     
     /**
      * @param args the command line arguments
@@ -43,8 +50,11 @@ public class ServerRRMI extends UnicastRemoteObject implements RMIDAO {
     
     @Override
     public String Compras(int id, int num)throws RemoteException{
+        carroCompras = new String[][]{
+            {"a","b"}
+        };
         
-        return "h";
+        return String.valueOf(seccionH[num][1]);
     }
     @Override
     public String VerCarrito()throws RemoteException{

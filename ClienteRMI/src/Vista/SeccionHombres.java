@@ -27,12 +27,6 @@ public class SeccionHombres extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
     }
     SeccionMujeres II= new SeccionMujeres();
-    String [][] seccionH={
-        {"01","Camiseta conjunto primavera","57.000",""},
-        {"02","Short conjunto primavera","79.000",""},
-        {"03","Hoodie conjunto primavera","120.000",""},
-        {"04","Zapatos conjunto primavera","315.000",""}
-    };
     int [] cantidad= new int[4];
     int x,y;
     
@@ -438,8 +432,9 @@ public class SeccionHombres extends javax.swing.JFrame {
 
          try {
             // TODO add your handling code here:==
-            x=01;
-            y=0;
+            x=02;
+            y=1;
+            
             Registry registro=LocateRegistry.getRegistry("127.0.0.1",7777);
             RMIDAO interfaz = (RMIDAO) registro.lookup("RemotoRMI");
             String metodo=interfaz.Compras(x,y);
