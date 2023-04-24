@@ -22,9 +22,20 @@ public class PaginaPrincipal extends javax.swing.JFrame {
     /**
      * Creates new form PaginaPrincipal
      */
-    public PaginaPrincipal() {
+    //variable de tipo static
+    private static PaginaPrincipal instancia;
+    
+    //constructor privado
+    private PaginaPrincipal() {
         initComponents();
         this.setLocationRelativeTo(null);
+    }
+    
+    //metodo que incicia el singleton
+    public static PaginaPrincipal getInstancia(){
+        if (instancia == null)
+            instancia = new PaginaPrincipal();
+        return instancia;
     }
     
     /**
@@ -246,7 +257,7 @@ public class PaginaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
         //MUJERES
         
-        SeccionMujeres a=new SeccionMujeres();
+        SeccionMujeres a=SeccionMujeres.getInstancia();
         a.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -254,7 +265,7 @@ public class PaginaPrincipal extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         //Hombres
-        SeccionHombres a=new SeccionHombres();
+        SeccionHombres a=SeccionHombres.getInstancia();
         a.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -262,7 +273,7 @@ public class PaginaPrincipal extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
         //BOLSOS
-        SeccionBolsos a=new SeccionBolsos();
+        SeccionBolsos a=SeccionBolsos.getInstancia();
         a.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton3ActionPerformed
@@ -270,7 +281,7 @@ public class PaginaPrincipal extends javax.swing.JFrame {
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
         //TIENDAS
-        Tiendas a=new Tiendas();
+        Tiendas a= Tiendas.getInstancia();
         a.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton4ActionPerformed
@@ -278,7 +289,7 @@ public class PaginaPrincipal extends javax.swing.JFrame {
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
         //NOVEDADES
-        Novedades a=new Novedades();
+        Novedades a=Novedades.getInstancia();
         a.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton5ActionPerformed
@@ -286,7 +297,7 @@ public class PaginaPrincipal extends javax.swing.JFrame {
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
         // TODO add your handling code here:
         //MenuPrincipal
-        PaginaPrincipal a=new PaginaPrincipal();
+        PaginaPrincipal a=PaginaPrincipal.getInstancia();
         a.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jMenuItem4ActionPerformed
@@ -298,7 +309,7 @@ public class PaginaPrincipal extends javax.swing.JFrame {
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
         // TODO add your handling code here:
         //Menu mujeres
-        SeccionMujeres a=new SeccionMujeres();
+        SeccionMujeres a=SeccionMujeres.getInstancia();
         a.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jMenuItem5ActionPerformed
@@ -306,7 +317,7 @@ public class PaginaPrincipal extends javax.swing.JFrame {
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
         // TODO add your handling code here:
         //Menu Hombres
-        SeccionHombres a=new SeccionHombres();
+        SeccionHombres a=SeccionHombres.getInstancia();
         a.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jMenuItem6ActionPerformed
@@ -314,7 +325,7 @@ public class PaginaPrincipal extends javax.swing.JFrame {
     private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
         // TODO add your handling code here:
         //Menu bolsos
-        SeccionBolsos a=new SeccionBolsos();
+        SeccionBolsos a=SeccionBolsos.getInstancia();
         a.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jMenuItem7ActionPerformed
