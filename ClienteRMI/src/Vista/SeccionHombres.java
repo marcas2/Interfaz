@@ -30,7 +30,6 @@ public class SeccionHombres extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
     }
-
     
     //metodo que incicia el singleton
     public static SeccionHombres getInstancia(){
@@ -454,8 +453,9 @@ public class SeccionHombres extends javax.swing.JFrame {
 
          try {
             // TODO add your handling code here:==
-            x=01;
-            y=0;
+            x=02;
+            y=1;
+            
             Registry registro=LocateRegistry.getRegistry("127.0.0.1",7777);
             RMIDAO interfaz = (RMIDAO) registro.lookup("RemotoRMI");
             String metodo=interfaz.Compras(x,y);
