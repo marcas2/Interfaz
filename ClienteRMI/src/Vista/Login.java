@@ -22,17 +22,23 @@ import javax.crypto.NoSuchPaddingException;
 import javax.swing.JOptionPane;
 
 /**
- *
- * @author sistemas
- * @version 
+ * Interfaz login
+ * @author Maria Y Juan
+ * @version 1.0
  */
+
 public class Login extends javax.swing.JFrame {
 
+    /**
+     * Declaración de variables
+     */
+    
     private static Login login;
     Cifrado seguridad = new Cifrado();
 
     
     /**
+     * Constructor privado
      * @method Login
      * sirve para --...
      */
@@ -165,10 +171,17 @@ public class Login extends javax.swing.JFrame {
     private void entrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entrarActionPerformed
         // TODO add your handling code here:
         try { 
-            // TODO add your handling code here:==
+            /**
+             * Llamar servidor y llamar metodo
+             */
+          
             Registry registro=LocateRegistry.getRegistry("127.0.0.1",7777);
             RMIDAO interfaz = (RMIDAO) registro.lookup("RemotoRMI");
             boolean metodo=interfaz.VerificarUsuarios(usuario.getText(), contraseña.getText());
+            
+            /**
+             * Se especifica que se le indicará al usuario al momento que dijite los parametros
+             */
 
             if(metodo==true){
                 
@@ -181,7 +194,9 @@ public class Login extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Usuario incorrecto, intente de nuevo", "Información", JOptionPane.ERROR_MESSAGE);
             }
             
-            //Encriptamiento o desencriptamiento
+            /**
+             * Encriptar y desencriptar
+             */
             
             String claveSecreta="aaaa";
             String a=seguridad.encriptar(contraseña.getText(), claveSecreta);

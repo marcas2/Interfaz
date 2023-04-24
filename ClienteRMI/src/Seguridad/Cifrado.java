@@ -17,14 +17,25 @@ import javax.crypto.NoSuchPaddingException;
 import javax.crypto.spec.SecretKeySpec;
 
 /**
- *
- * @author maria
+ * Clase cifrado
+ * @author maria y juan
  */
 public class Cifrado {
+    
+    /**
+     * Constructor
+     */
     
     public Cifrado() {
     }
     
+    /**
+     * Metodo crearClave
+     * @param clave
+     * @return
+     * @throws UnsupportedEncodingException
+     * @throws NoSuchAlgorithmException 
+     */
 
     private SecretKeySpec crearClave(String clave) throws UnsupportedEncodingException, NoSuchAlgorithmException{
         
@@ -38,6 +49,19 @@ public class Cifrado {
         
         return secretKey;
     }
+    
+    /**
+     * Metodo encriptar
+     * @param datos
+     * @param claveSecreta
+     * @return
+     * @throws UnsupportedEncodingException
+     * @throws NoSuchAlgorithmException
+     * @throws NoSuchPaddingException
+     * @throws InvalidKeyException
+     * @throws IllegalBlockSizeException
+     * @throws BadPaddingException 
+     */
     
      public String encriptar(String datos, String claveSecreta) throws UnsupportedEncodingException, NoSuchAlgorithmException, NoSuchPaddingException, InvalidKeyException, IllegalBlockSizeException, BadPaddingException{
        
@@ -54,6 +78,19 @@ public class Cifrado {
         
     }
     
+     /**
+      * Metodo desencriptar
+      * @param encriptado
+      * @param claveSecreta
+      * @return
+      * @throws NoSuchAlgorithmException
+      * @throws NoSuchPaddingException
+      * @throws InvalidKeyException
+      * @throws IllegalBlockSizeException
+      * @throws BadPaddingException
+      * @throws UnsupportedEncodingException 
+      */
+     
     public String desencriptar (String encriptado, String claveSecreta) throws NoSuchAlgorithmException, NoSuchPaddingException, InvalidKeyException, IllegalBlockSizeException, BadPaddingException, UnsupportedEncodingException{
        
         SecretKeySpec sk = this.crearClave(claveSecreta);

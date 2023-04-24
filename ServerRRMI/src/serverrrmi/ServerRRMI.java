@@ -7,7 +7,10 @@ package serverrrmi;
 /**
  *
  * @author maria
+ * @class ServerRMMI
+ * Clase servidor
  */
+
 import Interface.RMIDAO; //libreria propia
 
 //librerias que se importan
@@ -21,9 +24,27 @@ import javax.swing.JOptionPane;
 
 
 public class ServerRRMI extends UnicastRemoteObject implements RMIDAO {
+    
+    /**
+     * Declaración de variables
+     */
+    
     String [][] carroCompras;
+    String usuariVerdad;
+    String contraVerdad;
+    
+    /**
+     * Constructor
+     * @throws RemoteException 
+     */
+    
     public ServerRRMI() throws RemoteException{
         super();
+         usuariVerdad="Maria";
+         contraVerdad="123";
+        /**
+         * Array carrito de compras
+         */
         carroCompras = new String[][]{
             {"01","Camiseta conjunto primavera","57000","0","0"},
             {"02","Short conjunto primavera","79000","0","0"},
@@ -42,6 +63,7 @@ public class ServerRRMI extends UnicastRemoteObject implements RMIDAO {
     }
     
     /**
+     * Main
      * @param args the command line arguments
      */
 
@@ -55,6 +77,13 @@ public class ServerRRMI extends UnicastRemoteObject implements RMIDAO {
             System.out.println(ex.getMessage());
         }
     }
+    /**
+     * Metodo compras 
+     * @param id
+     * @param num
+     * @return
+     * @throws RemoteException 
+     */
     
     @Override
     public String Compras(int id, int num)throws RemoteException{
@@ -65,6 +94,13 @@ public class ServerRRMI extends UnicastRemoteObject implements RMIDAO {
        // return "Se ha añadido este producto a tu compra => " + carroCompras[num][1];
        return "Se ha añadido "+carroCompras[num][3] +" "+ carroCompras[num][1];
     }
+    
+    /**
+     * Metodo para ver carrito
+     * @return
+     * @throws RemoteException 
+     */
+    
     @Override
     public String VerCarrito()throws RemoteException{
         String MuestraCarro = "";
@@ -75,6 +111,13 @@ public class ServerRRMI extends UnicastRemoteObject implements RMIDAO {
         }
         return MuestraCarro;
     }
+    
+    /**
+     * Metodo vaciar carrito
+     * @return
+     * @throws RemoteException 
+     */
+    
     @Override
     public String VaciarCarrito ( ) throws RemoteException{
         for (int i = 0; i < carroCompras.length; i++) {
@@ -83,6 +126,15 @@ public class ServerRRMI extends UnicastRemoteObject implements RMIDAO {
         }
        return "El carrito está vacío";  
     }
+    
+    /**
+     * Metodo verificar usuario
+     * @param usuario
+     * @param contraseña
+     * @return
+     * @throws RemoteException 
+     */
+    
     @Override 
      public boolean VerificarUsuarios (String usuario, String contraseña) throws RemoteException{
          boolean estado=false;
