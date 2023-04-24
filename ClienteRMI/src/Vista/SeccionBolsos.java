@@ -13,9 +13,20 @@ public class SeccionBolsos extends javax.swing.JFrame {
     /**
      * Creates new form SeccionBolsos
      */
-    public SeccionBolsos() {
+    //variable de tipo static
+    private static SeccionBolsos instancia;
+    
+    //constructor privado
+    private SeccionBolsos() {
         initComponents();
         this.setLocationRelativeTo(null);
+    }
+    
+    //metodo que incicia el singleton
+    public static SeccionBolsos getInstancia(){
+        if (instancia == null)
+            instancia = new SeccionBolsos();
+        return instancia;
     }
 
     /**
@@ -421,7 +432,7 @@ public class SeccionBolsos extends javax.swing.JFrame {
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
         // TODO add your handling code here:
         //MenuPrincipal
-        PaginaPrincipal a=new PaginaPrincipal();
+        PaginaPrincipal a=PaginaPrincipal.getInstancia();
         a.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jMenuItem5ActionPerformed
@@ -433,7 +444,7 @@ public class SeccionBolsos extends javax.swing.JFrame {
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
         // TODO add your handling code here:
         //Menu mujeres
-        SeccionMujeres a=new SeccionMujeres();
+        SeccionMujeres a=SeccionMujeres.getInstancia();
         a.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jMenuItem6ActionPerformed
@@ -441,7 +452,7 @@ public class SeccionBolsos extends javax.swing.JFrame {
     private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
         // TODO add your handling code here:
         //Menu Hombres
-        SeccionHombres a=new SeccionHombres();
+        SeccionHombres a=SeccionHombres.getInstancia();
         a.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jMenuItem7ActionPerformed
@@ -449,7 +460,7 @@ public class SeccionBolsos extends javax.swing.JFrame {
     private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
         // TODO add your handling code here:
         //Menu bolsos
-        SeccionBolsos a=new SeccionBolsos();
+        SeccionBolsos a=SeccionBolsos.getInstancia();
         a.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jMenuItem8ActionPerformed
