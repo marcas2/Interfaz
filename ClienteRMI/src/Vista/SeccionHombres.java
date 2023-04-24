@@ -30,7 +30,7 @@ public class SeccionHombres extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
     }
-<<<<<<< HEAD
+
     
     //metodo que incicia el singleton
     public static SeccionHombres getInstancia(){
@@ -39,19 +39,15 @@ public class SeccionHombres extends javax.swing.JFrame {
         return instancia;
     }
 
-    String [][] info={
-        {"Camiseta conjunto primavera","57.000",""},
-        {"Short conjunto primavera","79.000",""},
-        {"Hoodie conjunto primavera","120.000",""},
-        {"Zapatos conjunto primavera","315.000",""}
-=======
-    SeccionMujeres II= new SeccionMujeres();
+   
+    
+    //SeccionMujeres II= new SeccionMujeres();
+    
     String [][] seccionH={
         {"01","Camiseta conjunto primavera","57.000",""},
         {"02","Short conjunto primavera","79.000",""},
         {"03","Hoodie conjunto primavera","120.000",""},
         {"04","Zapatos conjunto primavera","315.000",""}
->>>>>>> a8ac39760d1a88d5e6446f77a37cc47487fd05f3
     };
     int [] cantidad= new int[4];
     int x,y;
