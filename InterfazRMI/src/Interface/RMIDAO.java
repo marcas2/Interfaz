@@ -14,4 +14,6 @@ public interface RMIDAO extends Remote {
     public String Compras(int id, int num)throws RemoteException;
     public String VerCarrito()throws RemoteException;
     public String VaciarCarrito () throws RemoteException;
+    public boolean VerificarUsuarios (String usuario, String contraseña) throws RemoteException;
+   
 }
