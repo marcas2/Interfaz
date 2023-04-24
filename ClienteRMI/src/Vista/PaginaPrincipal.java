@@ -12,6 +12,7 @@ import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -72,8 +73,9 @@ public class PaginaPrincipal extends javax.swing.JFrame {
         jMenuItem6 = new javax.swing.JMenuItem();
         jMenu8 = new javax.swing.JMenu();
         jMenuItem7 = new javax.swing.JMenuItem();
-        jMenu9 = new javax.swing.JMenu();
-        jMenuItem8 = new javax.swing.JMenuItem();
+        jMenu10 = new javax.swing.JMenu();
+        jMenuItem9 = new javax.swing.JMenuItem();
+        jMenuItem10 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new java.awt.GridLayout(1, 0));
@@ -231,22 +233,30 @@ public class PaginaPrincipal extends javax.swing.JFrame {
 
         jMenuBar2.add(jMenu8);
 
-        jMenu9.setText("Ir a pagar");
-        jMenu9.addActionListener(new java.awt.event.ActionListener() {
+        jMenu10.setText("Carrito");
+        jMenu10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenu9ActionPerformed(evt);
+                jMenu10ActionPerformed(evt);
             }
         });
 
-        jMenuItem8.setText("Pagar");
-        jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItem9.setText("Ver Carrito");
+        jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem8ActionPerformed(evt);
+                jMenuItem9ActionPerformed(evt);
             }
         });
-        jMenu9.add(jMenuItem8);
+        jMenu10.add(jMenuItem9);
 
-        jMenuBar2.add(jMenu9);
+        jMenuItem10.setText("Vaciar Carrito");
+        jMenuItem10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem10ActionPerformed(evt);
+            }
+        });
+        jMenu10.add(jMenuItem10);
+
+        jMenuBar2.add(jMenu10);
 
         setJMenuBar(jMenuBar2);
 
@@ -330,15 +340,43 @@ public class PaginaPrincipal extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_jMenuItem7ActionPerformed
 
-    private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
+    private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
         // TODO add your handling code here:
+        try {
+            // TODO add your handling code here:==
+            Registry registro=LocateRegistry.getRegistry("127.0.0.1",7777);
+            RMIDAO interfaz = (RMIDAO) registro.lookup("RemotoRMI");
+            String metodo=interfaz.VerCarrito();
+            String a="Carrito";
+            JOptionPane.showMessageDialog(null,metodo,a,1);
 
+        } catch (RemoteException ex) {
+            Logger.getLogger(SeccionHombres.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (NotBoundException ex) {
+            Logger.getLogger(SeccionHombres.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jMenuItem9ActionPerformed
 
-    }//GEN-LAST:event_jMenuItem8ActionPerformed
-
-    private void jMenu9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu9ActionPerformed
+    private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenu9ActionPerformed
+        try {
+            // TODO add your handling code here:==
+            Registry registro=LocateRegistry.getRegistry("127.0.0.1",7777);
+            RMIDAO interfaz = (RMIDAO) registro.lookup("RemotoRMI");
+            String metodo=interfaz.VaciarCarrito();
+
+            JOptionPane.showMessageDialog(null,metodo);
+
+        } catch (RemoteException ex) {
+            Logger.getLogger(SeccionHombres.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (NotBoundException ex) {
+            Logger.getLogger(SeccionHombres.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jMenuItem10ActionPerformed
+
+    private void jMenu10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu10ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenu10ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -385,17 +423,18 @@ public class PaginaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JMenu jMenu10;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenu jMenu6;
     private javax.swing.JMenu jMenu7;
     private javax.swing.JMenu jMenu8;
-    private javax.swing.JMenu jMenu9;
     private javax.swing.JMenuBar jMenuBar2;
+    private javax.swing.JMenuItem jMenuItem10;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
-    private javax.swing.JMenuItem jMenuItem8;
+    private javax.swing.JMenuItem jMenuItem9;
     private java.awt.Panel panel1;
     private java.awt.Panel panel2;
     private java.awt.Panel panel3;

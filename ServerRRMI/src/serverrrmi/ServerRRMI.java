@@ -21,15 +21,23 @@ import javax.swing.JOptionPane;
 
 
 public class ServerRRMI extends UnicastRemoteObject implements RMIDAO {
-    String [][] seccionH;
     String [][] carroCompras;
     public ServerRRMI() throws RemoteException{
         super();
-        seccionH = new String[][]{
-            {"01","Camiseta conjunto primavera","57.000",""},
-            {"02","Short conjunto primavera","79.000",""},
-            {"03","Hoodie conjunto primavera","120.000",""},
-            {"04","Zapatos conjunto primavera","315.000",""}
+        carroCompras = new String[][]{
+            {"01","Camiseta conjunto primavera","57000","0","0","Talla", "Color"},
+            {"02","Short conjunto primavera","79000","0","0","Talla", "Color"},
+            {"03","Hoodie conjunto primavera","120000","0","0","Talla", "Color"},
+            {"04","Zapatos conjunto primavera","315000","0","0","Talla", "Color"},
+            {"05","Abrigo a cuadros","200000","0","0","Talla", "Color"},
+            {"06","Camisa sencilla","58000","0","0","Talla", "Color"},
+            {"07","Pantalon holgado","96000","0","0","Talla", "Color"},
+            {"8","Zapatos deportivos","193000","0","0","Talla", "Color"},
+            {"9","Bolso elegante mujer","389000","0","0","Talla", "Color"},
+            {"10","Bolso brillante muejr","256000","0","0","Talla", "Color"},
+            {"11","Bolso casual hombre","142000","0","0","Talla", "Color"},
+            {"12","Bolso formal hombre","315000","0","0","Talla", "Color"},
+            
         };
     }
     
@@ -50,20 +58,31 @@ public class ServerRRMI extends UnicastRemoteObject implements RMIDAO {
     
     @Override
     public String Compras(int id, int num)throws RemoteException{
-        carroCompras = new String[][]{
-            {"a","b"}
-        };
-        
-        return String.valueOf(seccionH[num][1]);
+        int nuevaCompra=Integer.parseInt(carroCompras[num][3])+1;
+        int vrCompra=Integer.parseInt(carroCompras[num][2])*nuevaCompra;
+        carroCompras[num][3]=String.valueOf(nuevaCompra);
+        carroCompras[num][4]=String.valueOf(vrCompra);
+       // return "Se ha añadido este producto a tu compra => " + carroCompras[num][1];
+       return "Se ha añadido "+carroCompras[num][3] +" "+ carroCompras[num][1];
     }
     @Override
     public String VerCarrito()throws RemoteException{
-        
-        return "";
+        String MuestraCarro = "";
+        for (int i = 0; i < carroCompras.length; i++) {
+            if( Integer.parseInt(carroCompras[i][3])>0 ){
+                MuestraCarro = MuestraCarro + "Producto => "  + carroCompras[i][1] + " Cant=>" + carroCompras[i][3] + " Valor=> " + carroCompras[i][4] + " \n";
+            }
+        }
+        return MuestraCarro;
     }
     @Override
     public String VaciarCarrito ( ) throws RemoteException{
-        return "";
+        for (int i = 0; i < carroCompras.length; i++) {
+            carroCompras[i][3]="0";
+            carroCompras[i][4]="0";
+        }
+       return "El carrito está vacío";
+       
     }
     
 }
