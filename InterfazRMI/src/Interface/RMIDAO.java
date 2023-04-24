@@ -11,7 +11,7 @@ import java.rmi.RemoteException;
  * @author maria
  */
 public interface RMIDAO extends Remote {
-    public String Compras()throws RemoteException;
-    public String VerCarrito(int [] cantidad,String [][] info, int x)throws RemoteException;
-    public String VaciarCarrito ( String [][] info,int [] cantidad, int x) throws RemoteException;
+    public String Compras(int id, int num)throws RemoteException;
+    public String VerCarrito()throws RemoteException;
+    public String VaciarCarrito () throws RemoteException;
 }
