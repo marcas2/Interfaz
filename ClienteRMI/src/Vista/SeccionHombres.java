@@ -30,6 +30,9 @@ public class SeccionHombres extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
     }
+<<<<<<< HEAD
+    SeccionMujeres II= new SeccionMujeres();
+=======
 
     
     //metodo que incicia el singleton
@@ -49,6 +52,7 @@ public class SeccionHombres extends javax.swing.JFrame {
         {"03","Hoodie conjunto primavera","120.000",""},
         {"04","Zapatos conjunto primavera","315.000",""}
     };
+>>>>>>> d14d7bf49ec214f8764cbc7a02d5fe9d3ef61fca
     int [] cantidad= new int[4];
     int x,y;
     
@@ -454,8 +458,9 @@ public class SeccionHombres extends javax.swing.JFrame {
 
          try {
             // TODO add your handling code here:==
-            x=01;
-            y=0;
+            x=02;
+            y=1;
+            
             Registry registro=LocateRegistry.getRegistry("127.0.0.1",7777);
             RMIDAO interfaz = (RMIDAO) registro.lookup("RemotoRMI");
             String metodo=interfaz.Compras(x,y);
