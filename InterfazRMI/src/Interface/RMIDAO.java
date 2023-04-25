@@ -20,7 +20,7 @@ public interface RMIDAO extends Remote {
      * @throws RemoteException 
      */
     
-    public String Compras(int id, int num)throws RemoteException;
+    public String Compras( int num, String talla, String color)throws RemoteException;
     
     /**
      * Declaración metodo VerCarrito
