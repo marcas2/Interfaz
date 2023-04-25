@@ -40,24 +40,24 @@ public class ServerRRMI extends UnicastRemoteObject implements RMIDAO {
     
     public ServerRRMI() throws RemoteException{
         super();
-         usuariVerdad="Maria";
+         usuariVerdad="elfuerte";
          contraVerdad="123";
         /**
          * Array carrito de compras
          */
         carroCompras = new String[][]{
-            {"01","Camiseta conjunto primavera","57000","0","0"},
-            {"02","Short conjunto primavera","79000","0","0"},
-            {"03","Hoodie conjunto primavera","120000","0","0"},
-            {"04","Zapatos conjunto primavera","315000","0","0"},
-            {"05","Abrigo a cuadros","200000","0","0"},
-            {"06","Camisa sencilla","58000","0","0"},
-            {"07","Pantalon holgado","96000","0","0"},
-            {"8","Zapatos deportivos","193000","0","0"},
-            {"9","Bolso elegante mujer","389000","0","0"},
-            {"10","Bolso brillante muejr","256000","0","0"},
-            {"11","Bolso casual hombre","142000","0","0"},
-            {"12","Bolso formal hombre","315000","0","0"},
+            {"01","Camiseta conjunto primavera","57000","0","0","Talla", "Color"},
+            {"02","Short conjunto primavera","79000","0","0","Talla", "Color"},
+            {"03","Hoodie conjunto primavera","120000","0","0","Talla", "Color"},
+            {"04","Zapatos conjunto primavera","315000","0","0","Talla", "Color"},
+            {"05","Abrigo a cuadros","200000","0","0","Talla", "Color"},
+            {"06","Camisa sencilla","58000","0","0","Talla", "Color"},
+            {"07","Pantalon holgado","96000","0","0","Talla", "Color"},
+            {"8","Zapatos deportivos","193000","0","0","Talla", "Color"},
+            {"9","Bolso elegante mujer","389000","0","0","Talla", "Color"},
+            {"10","Bolso brillante muejr","256000","0","0","Talla", "Color"},
+            {"11","Bolso casual hombre","142000","0","0","Talla", "Color"},
+            {"12","Bolso formal hombre","315000","0","0","Talla", "Color"},
             
         };
     }
@@ -86,11 +86,13 @@ public class ServerRRMI extends UnicastRemoteObject implements RMIDAO {
      */
     
     @Override
-    public String Compras(int id, int num)throws RemoteException{
+    public String Compras(int num, String talla, String color)throws RemoteException{
         int nuevaCompra=Integer.parseInt(carroCompras[num][3])+1;
         int vrCompra=Integer.parseInt(carroCompras[num][2])*nuevaCompra;
         carroCompras[num][3]=String.valueOf(nuevaCompra);
         carroCompras[num][4]=String.valueOf(vrCompra);
+        carroCompras[num][5]=talla;
+        carroCompras[num][6]=color;
        // return "Se ha añadido este producto a tu compra => " + carroCompras[num][1];
        return "Se ha añadido "+carroCompras[num][3] +" "+ carroCompras[num][1];
     }
@@ -106,7 +108,7 @@ public class ServerRRMI extends UnicastRemoteObject implements RMIDAO {
         String MuestraCarro = "";
         for (int i = 0; i < carroCompras.length; i++) {
             if( Integer.parseInt(carroCompras[i][3])>0 ){
-                MuestraCarro = MuestraCarro + "Producto => "  + carroCompras[i][1] + " Cant=>" + carroCompras[i][3] + " Valor=> " + carroCompras[i][4] + " \n";
+                MuestraCarro = MuestraCarro + "Producto => "  + carroCompras[i][1] + " Cant=>" + carroCompras[i][3] + " Valor=> " + carroCompras[i][4]+ " Talla=> "+carroCompras[i][5] +" Color=> "+carroCompras[i][6] + " \n";
             }
         }
         return MuestraCarro;
@@ -138,7 +140,7 @@ public class ServerRRMI extends UnicastRemoteObject implements RMIDAO {
     @Override 
      public boolean VerificarUsuarios (String usuario, String contraseña) throws RemoteException{
          boolean estado=false;
-            if((usuario.equals("elfuerte"))&&(contraseña.equals("123")))
+            if((usuario.equals(usuariVerdad))&&(contraseña.equals(contraVerdad)))
                 estado=true;
         return estado;
      }

@@ -416,14 +416,21 @@ public class SeccionBolsos extends javax.swing.JFrame {
         // TODO add your handling code here:
         try {
             // TODO add your handling code here:==
-            x=9; 
             y=8;
             
+            /**
+             * Obtener valor combobox
+             */
+            String talla = "N/A";
+            String color = String.valueOf(this.jComboBox3.getSelectedItem());
+            /**
+             * Llamar servidor
+             */
             Registry registro=LocateRegistry.getRegistry("127.0.0.1",7777);
             RMIDAO interfaz = (RMIDAO) registro.lookup("RemotoRMI");
-            String metodo=interfaz.Compras(x,y);
-            
+            String metodo=interfaz.Compras(y,talla,color);
             JOptionPane.showMessageDialog(null,metodo);
+
             
         } catch (RemoteException ex) {
             Logger.getLogger(SeccionHombres.class.getName()).log(Level.SEVERE, null, ex);
@@ -436,14 +443,22 @@ public class SeccionBolsos extends javax.swing.JFrame {
         // TODO add your handling code here:
         try {
             // TODO add your handling code here:==
-            x=10; 
+
             y=9;
             
+            /**
+             * Obtener valor combobox
+             */
+            String talla = "N/A";
+            String color = String.valueOf(this.jComboBox4.getSelectedItem());
+            /**
+             * Llamar servidor
+             */
             Registry registro=LocateRegistry.getRegistry("127.0.0.1",7777);
             RMIDAO interfaz = (RMIDAO) registro.lookup("RemotoRMI");
-            String metodo=interfaz.Compras(x,y);
-            
+            String metodo=interfaz.Compras(y,talla,color);
             JOptionPane.showMessageDialog(null,metodo);
+
             
         } catch (RemoteException ex) {
             Logger.getLogger(SeccionHombres.class.getName()).log(Level.SEVERE, null, ex);
@@ -456,14 +471,21 @@ public class SeccionBolsos extends javax.swing.JFrame {
         // TODO add your handling code here:
         try {
             // TODO add your handling code here:==
-            x=11; 
             y=10;
             
+            /**
+             * Obtener valor combobox
+             */
+            String talla = "N/A";
+            String color = String.valueOf(this.jComboBox5.getSelectedItem());
+            /**
+             * Llamar servidor
+             */
             Registry registro=LocateRegistry.getRegistry("127.0.0.1",7777);
             RMIDAO interfaz = (RMIDAO) registro.lookup("RemotoRMI");
-            String metodo=interfaz.Compras(x,y);
-            
+            String metodo=interfaz.Compras(y,talla,color);
             JOptionPane.showMessageDialog(null,metodo);
+
             
         } catch (RemoteException ex) {
             Logger.getLogger(SeccionHombres.class.getName()).log(Level.SEVERE, null, ex);
@@ -476,14 +498,21 @@ public class SeccionBolsos extends javax.swing.JFrame {
         // TODO add your handling code here:
         try {
             // TODO add your handling code here:==
-            x=12; 
             y=11;
             
+            /**
+             * Obtener valor combobox
+             */
+            String talla = String.valueOf(this.jComboBox6.getSelectedItem());
+            String color = String.valueOf(this.jComboBox7.getSelectedItem());
+            /**
+             * Llamar servidor
+             */
             Registry registro=LocateRegistry.getRegistry("127.0.0.1",7777);
             RMIDAO interfaz = (RMIDAO) registro.lookup("RemotoRMI");
-            String metodo=interfaz.Compras(x,y);
-            
+            String metodo=interfaz.Compras(y,talla,color);
             JOptionPane.showMessageDialog(null,metodo);
+
             
         } catch (RemoteException ex) {
             Logger.getLogger(SeccionHombres.class.getName()).log(Level.SEVERE, null, ex);

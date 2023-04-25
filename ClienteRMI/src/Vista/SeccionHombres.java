@@ -462,13 +462,18 @@ public class SeccionHombres extends javax.swing.JFrame {
 
          try {
             // TODO add your handling code here:==
-            x=01;
             y=0;
-            
+            /**
+             * Obtener valor combobox
+             */
+            String talla = String.valueOf(this.jComboBox1.getSelectedItem());
+            String color = String.valueOf(this.jComboBox2.getSelectedItem());
+            /**
+             * Llamar servidor
+             */
             Registry registro=LocateRegistry.getRegistry("127.0.0.1",7777);
             RMIDAO interfaz = (RMIDAO) registro.lookup("RemotoRMI");
-            String metodo=interfaz.Compras(x,y);
-            
+            String metodo=interfaz.Compras(y,talla,color);
             JOptionPane.showMessageDialog(null,metodo);
             
         } catch (RemoteException ex) {
@@ -484,15 +489,21 @@ public class SeccionHombres extends javax.swing.JFrame {
         // TODO add your handling code here:
          try {
             // TODO add your handling code here:==
-            x=02;
-            y=1;
             
+            y=1;
+            /**
+             * Obtener valor combobox
+             */
+            String talla = String.valueOf(this.jComboBox4.getSelectedItem());
+            String color = String.valueOf(this.jComboBox3.getSelectedItem());
+            /**
+             * Llamar servidor
+             */
             Registry registro=LocateRegistry.getRegistry("127.0.0.1",7777);
             RMIDAO interfaz = (RMIDAO) registro.lookup("RemotoRMI");
-            String metodo=interfaz.Compras(x,y);
-            
+            String metodo=interfaz.Compras(y,talla,color);
             JOptionPane.showMessageDialog(null,metodo);
-            
+  
         } catch (RemoteException ex) {
             Logger.getLogger(SeccionHombres.class.getName()).log(Level.SEVERE, null, ex);
         } catch (NotBoundException ex) {
@@ -504,15 +515,21 @@ public class SeccionHombres extends javax.swing.JFrame {
         // TODO add your handling code here:
         try {
             // TODO add your handling code here:==
-            x=03;
             y=2;
             
+            /**
+             * Obtener valor combobox
+             */
+            String talla = String.valueOf(this.jComboBox5.getSelectedItem());
+            String color = String.valueOf(this.jComboBox6.getSelectedItem());
+            /**
+             * Llamar servidor
+             */
             Registry registro=LocateRegistry.getRegistry("127.0.0.1",7777);
             RMIDAO interfaz = (RMIDAO) registro.lookup("RemotoRMI");
-            String metodo=interfaz.Compras(x,y);
-            
+            String metodo=interfaz.Compras(y,talla,color);
             JOptionPane.showMessageDialog(null,metodo);
-            
+
         } catch (RemoteException ex) {
             Logger.getLogger(SeccionHombres.class.getName()).log(Level.SEVERE, null, ex);
         } catch (NotBoundException ex) {
@@ -524,14 +541,21 @@ public class SeccionHombres extends javax.swing.JFrame {
         // TODO add your handling code here:
        try {
             // TODO add your handling code here:==
-            x=03;
             y=3;
             
+            /**
+             * Obtener valor combobox
+             */
+            String talla = String.valueOf(this.jComboBox7.getSelectedItem());
+            String color = String.valueOf(this.jComboBox9.getSelectedItem());
+            /**
+             * Llamar servidor
+             */
             Registry registro=LocateRegistry.getRegistry("127.0.0.1",7777);
             RMIDAO interfaz = (RMIDAO) registro.lookup("RemotoRMI");
-            String metodo=interfaz.Compras(x,y);
-            
+            String metodo=interfaz.Compras(y,talla,color);
             JOptionPane.showMessageDialog(null,metodo);
+           
             
         } catch (RemoteException ex) {
             Logger.getLogger(SeccionHombres.class.getName()).log(Level.SEVERE, null, ex);
@@ -541,7 +565,7 @@ public class SeccionHombres extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
-        // TODO add your handling code here:
+
         //MenuPrincipal
         PaginaPrincipal a=PaginaPrincipal.getInstancia();
         a.setVisible(true);
@@ -578,6 +602,10 @@ public class SeccionHombres extends javax.swing.JFrame {
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         // TODO add your handling code here:
+        
+        String x = String.valueOf(this.jComboBox1.getSelectedItem());
+        JOptionPane.showMessageDialog(null,x);
+        
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed

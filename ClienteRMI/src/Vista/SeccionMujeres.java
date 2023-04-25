@@ -509,14 +509,21 @@ public class SeccionMujeres extends javax.swing.JFrame {
         // TODO add your handling code here:
          try {
             // TODO add your handling code here:==
-            x=05;
             y=4;
             
+            /**
+             * Obtener valor combobox
+             */
+            String talla = String.valueOf(this.jComboBox1.getSelectedItem());
+            String color = String.valueOf(this.jComboBox7.getSelectedItem());
+            /**
+             * Llamar servidor
+             */
             Registry registro=LocateRegistry.getRegistry("127.0.0.1",7777);
             RMIDAO interfaz = (RMIDAO) registro.lookup("RemotoRMI");
-            String metodo=interfaz.Compras(x,y);
-            
+            String metodo=interfaz.Compras(y,talla,color);
             JOptionPane.showMessageDialog(null,metodo);
+ 
             
         } catch (RemoteException ex) {
             Logger.getLogger(SeccionHombres.class.getName()).log(Level.SEVERE, null, ex);
@@ -529,14 +536,21 @@ public class SeccionMujeres extends javax.swing.JFrame {
         // TODO add your handling code here:
          try {
             // TODO add your handling code here:==
-            x=06;
             y=5;
             
+            /**
+             * Obtener valor combobox
+             */
+            String talla = String.valueOf(this.jComboBox3.getSelectedItem());
+            String color = String.valueOf(this.jComboBox5.getSelectedItem());
+            /**
+             * Llamar servidor
+             */
             Registry registro=LocateRegistry.getRegistry("127.0.0.1",7777);
             RMIDAO interfaz = (RMIDAO) registro.lookup("RemotoRMI");
-            String metodo=interfaz.Compras(x,y);
-            
+            String metodo=interfaz.Compras(y,talla,color);
             JOptionPane.showMessageDialog(null,metodo);
+
             
         } catch (RemoteException ex) {
             Logger.getLogger(SeccionHombres.class.getName()).log(Level.SEVERE, null, ex);
@@ -549,14 +563,21 @@ public class SeccionMujeres extends javax.swing.JFrame {
         // TODO add your handling code here:
         try {
             // TODO add your handling code here:==
-            x=07;
             y=6;
             
+            /**
+             * Obtener valor combobox
+             */
+            String talla = String.valueOf(this.jComboBox2.getSelectedItem());
+            String color = String.valueOf(this.jComboBox6.getSelectedItem());
+            /**
+             * Llamar servidor
+             */
             Registry registro=LocateRegistry.getRegistry("127.0.0.1",7777);
             RMIDAO interfaz = (RMIDAO) registro.lookup("RemotoRMI");
-            String metodo=interfaz.Compras(x,y);
-            
+            String metodo=interfaz.Compras(y,talla,color);
             JOptionPane.showMessageDialog(null,metodo);
+
             
         } catch (RemoteException ex) {
             Logger.getLogger(SeccionHombres.class.getName()).log(Level.SEVERE, null, ex);
@@ -569,14 +590,21 @@ public class SeccionMujeres extends javax.swing.JFrame {
         // TODO add your handling code here:
          try {
             // TODO add your handling code here:==
-            x=8; 
             y=7;
             
+            /**
+             * Obtener valor combobox
+             */
+            String talla = String.valueOf(this.jComboBox4.getSelectedItem());
+            String color = String.valueOf(this.jComboBox8.getSelectedItem());
+            /**
+             * Llamar servidor
+             */
             Registry registro=LocateRegistry.getRegistry("127.0.0.1",7777);
             RMIDAO interfaz = (RMIDAO) registro.lookup("RemotoRMI");
-            String metodo=interfaz.Compras(x,y);
-            
-            JOptionPane.showMessageDialog(null,metodo);
+            String metodo=interfaz.Compras(y,talla,color);
+            JOptionPane.showMessageDialog(null,metodo);;
+
             
         } catch (RemoteException ex) {
             Logger.getLogger(SeccionHombres.class.getName()).log(Level.SEVERE, null, ex);
