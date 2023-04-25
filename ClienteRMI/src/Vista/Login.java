@@ -5,19 +5,40 @@
 package Vista;
 
 
+import Interface.RMIDAO;
+import Seguridad.Cifrado;
+import java.io.UnsupportedEncodingException;
+import java.rmi.NotBoundException;
+import java.rmi.RemoteException;
+import java.rmi.registry.LocateRegistry;
+import java.rmi.registry.Registry;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.crypto.BadPaddingException;
+import javax.crypto.IllegalBlockSizeException;
+import javax.crypto.NoSuchPaddingException;
 import javax.swing.JOptionPane;
 
 /**
- *
- * @author sistemas
- * @version 
+ * Interfaz login
+ * @author Maria Y Juan
+ * @version 1.0
  */
+
 public class Login extends javax.swing.JFrame {
 
+    /**
+     * Declaración de variables
+     */
+    
     private static Login login;
+    Cifrado seguridad = new Cifrado();
 
     
     /**
+     * Constructor privado
      * @method Login
      * sirve para --...
      */
@@ -149,15 +170,57 @@ public class Login extends javax.swing.JFrame {
 
     private void entrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entrarActionPerformed
         // TODO add your handling code here:
-        
-        if(VerificarUsuarios(usuario.getText(), contraseña.getText())){
-            JOptionPane.showMessageDialog(this, "Usuario correcto", "Información", JOptionPane.OK_OPTION);
-        PaginaPrincipal a=PaginaPrincipal.getInstancia();
-        a.setVisible(true);
-        this.setVisible(false);
+        try { 
+            /**
+             * Llamar servidor y llamar metodo
+             */
+          
+            Registry registro=LocateRegistry.getRegistry("127.0.0.1",7777);
+            RMIDAO interfaz = (RMIDAO) registro.lookup("RemotoRMI");
+            boolean metodo=interfaz.VerificarUsuarios(usuario.getText(), contraseña.getText());
+            
+            /**
+             * Se especifica que se le indicará al usuario al momento que dijite los parametros
+             */
+
+            if(metodo==true){
+                
+                JOptionPane.showMessageDialog(this, "Usuario correcto", "Información", 1);
+                PaginaPrincipal a=PaginaPrincipal.getInstancia();
+                a.setVisible(true);
+                this.setVisible(false);
+            }
+            else{
+            JOptionPane.showMessageDialog(this, "Usuario incorrecto, intente de nuevo", "Información", JOptionPane.ERROR_MESSAGE);
+            }
+            
+            /**
+             * Encriptar y desencriptar
+             */
+            
+            String claveSecreta="aaaa";
+            String a=seguridad.encriptar(contraseña.getText(), claveSecreta);
+            JOptionPane.showMessageDialog(this, seguridad.encriptar(contraseña.getText(), claveSecreta), "Encriptado", JOptionPane.OK_OPTION);
+            JOptionPane.showMessageDialog(this, seguridad.desencriptar(a,claveSecreta), "Desencriptado", JOptionPane.OK_OPTION);
+            
+            
+        } catch (RemoteException ex) {
+            Logger.getLogger(SeccionHombres.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (NotBoundException ex) {
+            Logger.getLogger(SeccionHombres.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (UnsupportedEncodingException ex) {
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (NoSuchAlgorithmException ex) {
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (NoSuchPaddingException ex) {
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (InvalidKeyException ex) {
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IllegalBlockSizeException ex) {
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (BadPaddingException ex) {
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
         }
-        else
-            JOptionPane.showMessageDialog(this, "Usuario incorrecto", "Información", JOptionPane.ERROR_MESSAGE);
     }//GEN-LAST:event_entrarActionPerformed
 
     private void usuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usuarioActionPerformed
@@ -168,14 +231,7 @@ public class Login extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_contraseñaActionPerformed
 
-    public boolean VerificarUsuarios(String usuario, String contraseña) {
-        boolean estado=false;
-        
-        if((usuario.equals("elfuerte"))&&(contraseña.equals("123")))
-            estado=true;
-        
-        return estado;
-    }
+    
     
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
