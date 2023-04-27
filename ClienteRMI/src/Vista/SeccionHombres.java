@@ -603,8 +603,6 @@ public class SeccionHombres extends javax.swing.JFrame {
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         // TODO add your handling code here:
         
-        String x = String.valueOf(this.jComboBox1.getSelectedItem());
-        JOptionPane.showMessageDialog(null,x);
         
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
@@ -648,8 +646,9 @@ public class SeccionHombres extends javax.swing.JFrame {
             Registry registro=LocateRegistry.getRegistry("127.0.0.1",7777);
             RMIDAO interfaz = (RMIDAO) registro.lookup("RemotoRMI");
             String metodo=interfaz.VerCarrito();
+            String carro="Carrito";
 
-            JOptionPane.showMessageDialog(null,metodo,metodo,2);
+            JOptionPane.showMessageDialog(null,metodo,carro,2);
             
         } catch (RemoteException ex) {
             Logger.getLogger(SeccionHombres.class.getName()).log(Level.SEVERE, null, ex);
