@@ -46,18 +46,18 @@ public class ServerRRMI extends UnicastRemoteObject implements RMIDAO {
          * Array carrito de compras
          */
         carroCompras = new String[][]{
-            {"01","Camiseta conjunto primavera","57000","0","0","Talla", "Color"},
-            {"02","Short conjunto primavera","79000","0","0","Talla", "Color"},
-            {"03","Hoodie conjunto primavera","120000","0","0","Talla", "Color"},
-            {"04","Zapatos conjunto primavera","315000","0","0","Talla", "Color"},
-            {"05","Abrigo a cuadros","200000","0","0","Talla", "Color"},
-            {"06","Camisa sencilla","58000","0","0","Talla", "Color"},
-            {"07","Pantalon holgado","96000","0","0","Talla", "Color"},
-            {"8","Zapatos deportivos","193000","0","0","Talla", "Color"},
-            {"9","Bolso elegante mujer","389000","0","0","Talla", "Color"},
-            {"10","Bolso brillante muejr","256000","0","0","Talla", "Color"},
-            {"11","Bolso casual hombre","142000","0","0","Talla", "Color"},
-            {"12","Bolso formal hombre","315000","0","0","Talla", "Color"},
+            {"01","Camiseta conjunto primavera","57000","0","0","", ""},
+            {"02","Short conjunto primavera","79000","0","0","", ""},
+            {"03","Hoodie conjunto primavera","120000","0","0","", ""},
+            {"04","Zapatos conjunto primavera","315000","0","0","", ""},
+            {"05","Abrigo a cuadros","200000","0","0","", ""},
+            {"06","Camisa sencilla","58000","0","0","", ""},
+            {"07","Pantalon holgado","96000","0","0","", ""},
+            {"8","Zapatos deportivos","193000","0","0","", ""},
+            {"9","Bolso elegante mujer","389000","0","0","", ""},
+            {"10","Bolso brillante muejr","256000","0","0","", ""},
+            {"11","Bolso casual hombre","142000","0","0","", ""},
+            {"12","Bolso formal hombre","315000","0","0","", ""},
             
         };
     }
@@ -79,7 +79,6 @@ public class ServerRRMI extends UnicastRemoteObject implements RMIDAO {
     }
     /**
      * Metodo compras 
-     * @param id
      * @param num
      * @return
      * @throws RemoteException 
@@ -91,8 +90,8 @@ public class ServerRRMI extends UnicastRemoteObject implements RMIDAO {
         int vrCompra=Integer.parseInt(carroCompras[num][2])*nuevaCompra;
         carroCompras[num][3]=String.valueOf(nuevaCompra);
         carroCompras[num][4]=String.valueOf(vrCompra);
-        carroCompras[num][5]=talla;
-        carroCompras[num][6]=color;
+        carroCompras[num][5]=carroCompras[num][5]+talla+",";
+        carroCompras[num][6]=carroCompras[num][6]+color+",";
        // return "Se ha añadido este producto a tu compra => " + carroCompras[num][1];
        return "Se ha añadido "+carroCompras[num][3] +" "+ carroCompras[num][1];
     }
@@ -133,7 +132,7 @@ public class ServerRRMI extends UnicastRemoteObject implements RMIDAO {
      * Metodo verificar usuario
      * @param usuario
      * @param contraseña
-     * @return
+     * @return estado
      * @throws RemoteException 
      */
     
