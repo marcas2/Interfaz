@@ -94,18 +94,22 @@ public class SeccionHombres extends javax.swing.JFrame {
         jComboBox9 = new javax.swing.JComboBox<>();
         jLabel23 = new javax.swing.JLabel();
         jButton5 = new javax.swing.JButton();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu4 = new javax.swing.JMenu();
-        jMenuItem4 = new javax.swing.JMenuItem();
+        jMenuBar6 = new javax.swing.JMenuBar();
+        jMenu9 = new javax.swing.JMenu();
+        jMenuItem10 = new javax.swing.JMenuItem();
+        jMenu10 = new javax.swing.JMenu();
+        jMenuItem5 = new javax.swing.JMenuItem();
+        jMenu11 = new javax.swing.JMenu();
+        jMenuItem6 = new javax.swing.JMenuItem();
+        jMenu12 = new javax.swing.JMenu();
+        jMenuItem11 = new javax.swing.JMenuItem();
+        jMenu13 = new javax.swing.JMenu();
+        jMenuItem12 = new javax.swing.JMenuItem();
+        jMenuItem13 = new javax.swing.JMenuItem();
+        jMenuItem14 = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenu3 = new javax.swing.JMenu();
         jMenuItem3 = new javax.swing.JMenuItem();
-        jMenu5 = new javax.swing.JMenu();
-        jMenuItem5 = new javax.swing.JMenuItem();
-        jMenuItem6 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -359,30 +363,99 @@ public class SeccionHombres extends javax.swing.JFrame {
 
         jPanel1.add(jPanel2, java.awt.BorderLayout.CENTER);
 
-        jMenuBar1.setBackground(new java.awt.Color(163, 144, 129));
-        jMenuBar1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jMenuBar1.setOpaque(true);
+        jMenuBar6.setBackground(new java.awt.Color(163, 144, 129));
+        jMenuBar6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jMenuBar6.setOpaque(true);
 
-        jMenu4.setText("Principal");
-        jMenu4.addActionListener(new java.awt.event.ActionListener() {
+        jMenu9.setText("Principal");
+        jMenu9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenu4ActionPerformed(evt);
+                jMenu9ActionPerformed(evt);
             }
         });
 
-        jMenuItem4.setText("Pag Principal");
-        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItem10.setText("Pag Principal");
+        jMenuItem10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem4ActionPerformed(evt);
+                jMenuItem10ActionPerformed(evt);
             }
         });
-        jMenu4.add(jMenuItem4);
+        jMenu9.add(jMenuItem10);
 
-        jMenuBar1.add(jMenu4);
+        jMenuBar6.add(jMenu9);
 
-        jMenu1.setText("Mujer");
+        jMenu10.setText("Mujer");
 
-        jMenuItem2.setText("Ropa");
+        jMenuItem5.setText("Ropa");
+        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem5ActionPerformed(evt);
+            }
+        });
+        jMenu10.add(jMenuItem5);
+
+        jMenuBar6.add(jMenu10);
+
+        jMenu11.setText("Hombre");
+
+        jMenuItem6.setText("Ropa");
+        jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem6ActionPerformed(evt);
+            }
+        });
+        jMenu11.add(jMenuItem6);
+
+        jMenuBar6.add(jMenu11);
+
+        jMenu12.setText("Bolsos");
+
+        jMenuItem11.setText("Ropa");
+        jMenuItem11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem11ActionPerformed(evt);
+            }
+        });
+        jMenu12.add(jMenuItem11);
+
+        jMenuBar6.add(jMenu12);
+
+        jMenu13.setText("Carrito");
+        jMenu13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu13ActionPerformed(evt);
+            }
+        });
+
+        jMenuItem12.setText("Ver Carrito");
+        jMenuItem12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem12ActionPerformed(evt);
+            }
+        });
+        jMenu13.add(jMenuItem12);
+
+        jMenuItem13.setText("Vaciar Carrito");
+        jMenuItem13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem13ActionPerformed(evt);
+            }
+        });
+        jMenu13.add(jMenuItem13);
+
+        jMenuItem14.setText("Ver Carrito I");
+        jMenuItem14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem14ActionPerformed(evt);
+            }
+        });
+        jMenu13.add(jMenuItem14);
+
+        jMenuBar6.add(jMenu13);
+
+        jMenu1.setText("Usuario");
+
+        jMenuItem2.setText("Ver usuario");
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem2ActionPerformed(evt);
@@ -390,58 +463,17 @@ public class SeccionHombres extends javax.swing.JFrame {
         });
         jMenu1.add(jMenuItem2);
 
-        jMenuBar1.add(jMenu1);
-
-        jMenu2.setText("Hombre");
-
-        jMenuItem1.setText("Ropa");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
-            }
-        });
-        jMenu2.add(jMenuItem1);
-
-        jMenuBar1.add(jMenu2);
-
-        jMenu3.setText("Bolsos");
-
-        jMenuItem3.setText("Ropa");
+        jMenuItem3.setText("Actualizar Información");
         jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem3ActionPerformed(evt);
             }
         });
-        jMenu3.add(jMenuItem3);
+        jMenu1.add(jMenuItem3);
 
-        jMenuBar1.add(jMenu3);
+        jMenuBar6.add(jMenu1);
 
-        jMenu5.setText("Carrito");
-        jMenu5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenu5ActionPerformed(evt);
-            }
-        });
-
-        jMenuItem5.setText("Ver Carrito");
-        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem5ActionPerformed(evt);
-            }
-        });
-        jMenu5.add(jMenuItem5);
-
-        jMenuItem6.setText("Vaciar Carrito");
-        jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem6ActionPerformed(evt);
-            }
-        });
-        jMenu5.add(jMenuItem6);
-
-        jMenuBar1.add(jMenu5);
-
-        setJMenuBar(jMenuBar1);
+        setJMenuBar(jMenuBar6);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -464,11 +496,11 @@ public class SeccionHombres extends javax.swing.JFrame {
             // TODO add your handling code here:==
             x=01;
             y=0;
-            
+            String talla = String.valueOf(this.jComboBox1.getSelectedItem());
+            String color = String.valueOf(this.jComboBox2.getSelectedItem());
             Registry registro=LocateRegistry.getRegistry("127.0.0.1",7777);
             RMIDAO interfaz = (RMIDAO) registro.lookup("RemotoRMI");
-            String metodo=interfaz.Compras(x,y);
-            
+            String metodo=interfaz.Compras(x,y,talla,color); 
             JOptionPane.showMessageDialog(null,metodo);
             
         } catch (RemoteException ex) {
@@ -482,15 +514,15 @@ public class SeccionHombres extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-         try {
+        try {
             // TODO add your handling code here:==
-            x=02;
+            x=01;
             y=1;
-            
+            String talla = String.valueOf(this.jComboBox4.getSelectedItem());
+            String color = String.valueOf(this.jComboBox3.getSelectedItem());
             Registry registro=LocateRegistry.getRegistry("127.0.0.1",7777);
             RMIDAO interfaz = (RMIDAO) registro.lookup("RemotoRMI");
-            String metodo=interfaz.Compras(x,y);
-            
+            String metodo=interfaz.Compras(x,y,talla,color); 
             JOptionPane.showMessageDialog(null,metodo);
             
         } catch (RemoteException ex) {
@@ -504,13 +536,13 @@ public class SeccionHombres extends javax.swing.JFrame {
         // TODO add your handling code here:
         try {
             // TODO add your handling code here:==
-            x=03;
+            x=01;
             y=2;
-            
+            String talla = String.valueOf(this.jComboBox5.getSelectedItem());
+            String color = String.valueOf(this.jComboBox6.getSelectedItem());
             Registry registro=LocateRegistry.getRegistry("127.0.0.1",7777);
             RMIDAO interfaz = (RMIDAO) registro.lookup("RemotoRMI");
-            String metodo=interfaz.Compras(x,y);
-            
+            String metodo=interfaz.Compras(x,y,talla,color); 
             JOptionPane.showMessageDialog(null,metodo);
             
         } catch (RemoteException ex) {
@@ -527,11 +559,13 @@ public class SeccionHombres extends javax.swing.JFrame {
             x=03;
             y=3;
             
+            String talla = String.valueOf(this.jComboBox7.getSelectedItem());
+            String color = String.valueOf(this.jComboBox9.getSelectedItem());
             Registry registro=LocateRegistry.getRegistry("127.0.0.1",7777);
             RMIDAO interfaz = (RMIDAO) registro.lookup("RemotoRMI");
-            String metodo=interfaz.Compras(x,y);
-            
+            String metodo=interfaz.Compras(x,y,talla,color); 
             JOptionPane.showMessageDialog(null,metodo);
+
             
         } catch (RemoteException ex) {
             Logger.getLogger(SeccionHombres.class.getName()).log(Level.SEVERE, null, ex);
@@ -539,42 +573,6 @@ public class SeccionHombres extends javax.swing.JFrame {
             Logger.getLogger(SeccionHombres.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jButton5ActionPerformed
-
-    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
-        // TODO add your handling code here:
-        //MenuPrincipal
-        PaginaPrincipal a=PaginaPrincipal.getInstancia();
-        a.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_jMenuItem4ActionPerformed
-
-    private void jMenu4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenu4ActionPerformed
-
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        // TODO add your handling code here:
-        //Menu mujeres
-        SeccionMujeres a=SeccionMujeres.getInstancia();
-        a.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
-
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        // TODO add your handling code here:
-        //Menu Hombres
-        SeccionHombres a=SeccionHombres.getInstancia();
-        a.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
-
-    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-        // TODO add your handling code here:
-        //Menu bolsos
-        SeccionBolsos a=SeccionBolsos.getInstancia();
-        a.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         // TODO add your handling code here:
@@ -608,46 +606,100 @@ public class SeccionHombres extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox9ActionPerformed
 
-    private void jMenu5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu5ActionPerformed
+    private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
         // TODO add your handling code here:
+        //MenuPrincipal
+        PaginaPrincipal a=PaginaPrincipal.getInstancia();
+        a.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jMenuItem10ActionPerformed
 
-    }//GEN-LAST:event_jMenu5ActionPerformed
+    private void jMenu9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu9ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenu9ActionPerformed
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+        // TODO add your handling code here:
+        //Menu mujeres
+        SeccionMujeres a=SeccionMujeres.getInstancia();
+        a.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jMenuItem5ActionPerformed
+
+    private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
+        // TODO add your handling code here:
+        //Menu Hombres
+        SeccionHombres a=SeccionHombres.getInstancia();
+        a.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jMenuItem6ActionPerformed
+
+    private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
+        // TODO add your handling code here:
+        //Menu bolsos
+        SeccionBolsos a=SeccionBolsos.getInstancia();
+        a.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jMenuItem11ActionPerformed
+
+    private void jMenuItem12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem12ActionPerformed
         // TODO add your handling code here:
         try {
             // TODO add your handling code here:==
             Registry registro=LocateRegistry.getRegistry("127.0.0.1",7777);
             RMIDAO interfaz = (RMIDAO) registro.lookup("RemotoRMI");
             String metodo=interfaz.VerCarrito();
+            String a="Carrito";
+            JOptionPane.showMessageDialog(null,metodo,a,1);
 
-            JOptionPane.showMessageDialog(null,metodo,metodo,2);
-            
         } catch (RemoteException ex) {
             Logger.getLogger(SeccionHombres.class.getName()).log(Level.SEVERE, null, ex);
         } catch (NotBoundException ex) {
             Logger.getLogger(SeccionHombres.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-    }//GEN-LAST:event_jMenuItem5ActionPerformed
+    }//GEN-LAST:event_jMenuItem12ActionPerformed
 
-    private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
+    private void jMenuItem13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem13ActionPerformed
         // TODO add your handling code here:
         try {
             // TODO add your handling code here:==
             Registry registro=LocateRegistry.getRegistry("127.0.0.1",7777);
             RMIDAO interfaz = (RMIDAO) registro.lookup("RemotoRMI");
             String metodo=interfaz.VaciarCarrito();
-            
-            
+
             JOptionPane.showMessageDialog(null,metodo);
-            
+
         } catch (RemoteException ex) {
             Logger.getLogger(SeccionHombres.class.getName()).log(Level.SEVERE, null, ex);
         } catch (NotBoundException ex) {
             Logger.getLogger(SeccionHombres.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_jMenuItem6ActionPerformed
+    }//GEN-LAST:event_jMenuItem13ActionPerformed
+
+    private void jMenuItem14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem14ActionPerformed
+        // TODO add your handling code here:
+        Carrito a= Carrito.getInstancia();
+        a.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jMenuItem14ActionPerformed
+
+    private void jMenu13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu13ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenu13ActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        // TODO add your handling code here:
+        Usuario a= Usuario.getInstancia();
+        a.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        // TODO add your handling code here:
+        ActualizarInfo a= ActualizarInfo.getInstancia();
+        a.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -711,17 +763,33 @@ public class SeccionHombres extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu jMenu10;
+    private javax.swing.JMenu jMenu11;
+    private javax.swing.JMenu jMenu12;
+    private javax.swing.JMenu jMenu13;
     private javax.swing.JMenu jMenu5;
-    private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenu jMenu6;
+    private javax.swing.JMenu jMenu7;
+    private javax.swing.JMenu jMenu8;
+    private javax.swing.JMenu jMenu9;
+    private javax.swing.JMenuBar jMenuBar2;
+    private javax.swing.JMenuBar jMenuBar3;
+    private javax.swing.JMenuBar jMenuBar4;
+    private javax.swing.JMenuBar jMenuBar5;
+    private javax.swing.JMenuBar jMenuBar6;
+    private javax.swing.JMenuItem jMenuItem10;
+    private javax.swing.JMenuItem jMenuItem11;
+    private javax.swing.JMenuItem jMenuItem12;
+    private javax.swing.JMenuItem jMenuItem13;
+    private javax.swing.JMenuItem jMenuItem14;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
+    private javax.swing.JMenuItem jMenuItem7;
+    private javax.swing.JMenuItem jMenuItem8;
+    private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel2;

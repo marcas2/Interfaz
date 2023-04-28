@@ -20,7 +20,7 @@ public interface RMIDAO extends Remote {
      * @throws RemoteException 
      */
     
-    public String Compras(int id, int num)throws RemoteException;
+    public String Compras(int id, int num, String talla, String color)throws RemoteException;
     
     /**
      * Declaración metodo VerCarrito
@@ -46,5 +46,30 @@ public interface RMIDAO extends Remote {
      * @throws RemoteException 
      */
     public boolean VerificarUsuarios (String usuario, String contraseña) throws RemoteException;
+   /**
+    * devolver nombre
+    * @return
+    * @throws RemoteException 
+    */
+    public String devolverNombreUsuario ( ) throws RemoteException;
+    public String devolverUsuario ( ) throws RemoteException;   
+    public String devolverDirección ( ) throws RemoteException;
+    
+    /** 
+     * Cambiar info
+     * @param nomUs
+     */
+ 
+    public String cambiarNombreUsuario (String nomUs ) throws RemoteException;
+    public String cambiarUsuario (String usuariVerdad) throws RemoteException;
+    public String cambiarDirección (String direccionNuev) throws RemoteException;
+    public String cambiarContraseña (String contraPrueb,String contraNueva) throws RemoteException;
    
+    public int historialCompras (int comp) throws RemoteException;
+    public String comprobarCupon (String cup) throws RemoteException;
+    public int añadirCompra (int compra) throws RemoteException;
+    public int verCompra () throws RemoteException;
+
+    
+
 }
