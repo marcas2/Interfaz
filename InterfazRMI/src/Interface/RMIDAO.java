@@ -55,13 +55,31 @@ public interface RMIDAO extends Remote {
     public String devolverUsuario ( ) throws RemoteException;   
     public String devolverDirección ( ) throws RemoteException;
     
-    /** 
-     * Cambiar info
+    /**
+     * cambiarNombre
      * @param nomUs
+     * @return
+     * @throws RemoteException 
      */
  
     public String cambiarNombreUsuario (String nomUs ) throws RemoteException;
+    
+    /**
+     * cambiarUsuario
+     * @param usuariVerdad
+     * @return
+     * @throws RemoteException 
+     */
+    
     public String cambiarUsuario (String usuariVerdad) throws RemoteException;
+    
+    /**
+     * 
+     * @param direccionNuev
+     * @return
+     * @throws RemoteException 
+     */
+    
     public String cambiarDirección (String direccionNuev) throws RemoteException;
     public String cambiarContraseña (String contraPrueb,String contraNueva) throws RemoteException;
    

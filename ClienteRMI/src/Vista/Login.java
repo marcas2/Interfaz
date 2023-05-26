@@ -189,20 +189,18 @@ public class Login extends javax.swing.JFrame {
                 PaginaPrincipal a=PaginaPrincipal.getInstancia();
                 a.setVisible(true);
                 this.setVisible(false);
+             /**
+             * Encriptar y desencriptar
+             */
+                String claveSecreta="aaaa";
+                String b=seguridad.encriptar(contraseña.getText(), claveSecreta);
+                JOptionPane.showMessageDialog(this, seguridad.encriptar(contraseña.getText(), claveSecreta), "Encriptado", JOptionPane.OK_OPTION);
+                JOptionPane.showMessageDialog(this, seguridad.desencriptar(b,claveSecreta), "Desencriptado", JOptionPane.OK_OPTION);
             }
             else{
             JOptionPane.showMessageDialog(this, "Usuario incorrecto, intente de nuevo", "Información", JOptionPane.ERROR_MESSAGE);
             }
-            
-            /**
-             * Encriptar y desencriptar
-             */
-            
-            String claveSecreta="aaaa";
-            String a=seguridad.encriptar(contraseña.getText(), claveSecreta);
-            JOptionPane.showMessageDialog(this, seguridad.encriptar(contraseña.getText(), claveSecreta), "Encriptado", JOptionPane.OK_OPTION);
-            JOptionPane.showMessageDialog(this, seguridad.desencriptar(a,claveSecreta), "Desencriptado", JOptionPane.OK_OPTION);
-            
+                 
             
         } catch (RemoteException ex) {
             Logger.getLogger(SeccionHombres.class.getName()).log(Level.SEVERE, null, ex);
