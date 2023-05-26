@@ -28,11 +28,16 @@ public class ServerRRMI extends UnicastRemoteObject implements RMIDAO {
     /**
      * Declaración de variables
      */
-    
+    String nombreUsuario; 
+    String celularUsuario;
+    String direcciónUsuario;
     String [][] carroCompras;
+    String [] cupones;
     String usuariVerdad;
     String contraVerdad;
-    
+    int compras;
+    String Sugerencia;
+    String mensaje;
     /**
      * Constructor
      * @throws RemoteException 
@@ -40,26 +45,36 @@ public class ServerRRMI extends UnicastRemoteObject implements RMIDAO {
     
     public ServerRRMI() throws RemoteException{
         super();
-         usuariVerdad="elfuerte";
-         contraVerdad="123";
+        usuariVerdad="Maria";
+        contraVerdad="123";
+        nombreUsuario="Karla Rodriguez";
+        celularUsuario="322-390-7472";
+        direcciónUsuario="Cra 20 #123 Casa2";
+        compras=0;
+        Sugerencia="";
+        mensaje="No se aplica el cupon, invalido";
         /**
          * Array carrito de compras
          */
         carroCompras = new String[][]{
-            {"01","Camiseta conjunto primavera","57000","0","0","", ""},
-            {"02","Short conjunto primavera","79000","0","0","", ""},
-            {"03","Hoodie conjunto primavera","120000","0","0","", ""},
-            {"04","Zapatos conjunto primavera","315000","0","0","", ""},
-            {"05","Abrigo a cuadros","200000","0","0","", ""},
-            {"06","Camisa sencilla","58000","0","0","", ""},
-            {"07","Pantalon holgado","96000","0","0","", ""},
-            {"8","Zapatos deportivos","193000","0","0","", ""},
-            {"9","Bolso elegante mujer","389000","0","0","", ""},
-            {"10","Bolso brillante muejr","256000","0","0","", ""},
-            {"11","Bolso casual hombre","142000","0","0","", ""},
-            {"12","Bolso formal hombre","315000","0","0","", ""},
+            {"01","Camiseta conjunto primavera","57000","0","0","",""},
+            {"02","Short conjunto primavera","79000","0","0","",""},
+            {"03","Hoodie conjunto primavera","120000","0","0","",""},
+            {"04","Zapatos conjunto primavera","315000","0","0","",""},
+            {"05","Abrigo a cuadros","200000","0","0","",""},
+            {"06","Camisa sencilla","58000","0","0","",""},
+            {"07","Pantalon holgado","96000","0","0","",""},
+            {"8","Zapatos deportivos","193000","0","0","",""},
+            {"9","Bolso elegante mujer","389000","0","0","",""},
+            {"10","Bolso brillante muejr","256000","0","0","",""},
+            {"11","Bolso casual hombre","142000","0","0","",""},
+            {"12","Bolso formal hombre","315000","0","0","",""},
             
         };
+        /**
+         * Array cupones
+         */
+         cupones = new String[]{"DESCUENTO10", "BIENVENIDO20", "OFERTA25", "REGALO50"};
     }
     
     /**
@@ -79,19 +94,20 @@ public class ServerRRMI extends UnicastRemoteObject implements RMIDAO {
     }
     /**
      * Metodo compras 
+     * @param id
      * @param num
      * @return
      * @throws RemoteException 
      */
     
     @Override
-    public String Compras(int num, String talla, String color)throws RemoteException{
+    public String Compras(int id, int num, String talla, String color)throws RemoteException{
         int nuevaCompra=Integer.parseInt(carroCompras[num][3])+1;
         int vrCompra=Integer.parseInt(carroCompras[num][2])*nuevaCompra;
         carroCompras[num][3]=String.valueOf(nuevaCompra);
         carroCompras[num][4]=String.valueOf(vrCompra);
-        carroCompras[num][5]=carroCompras[num][5]+talla+",";
-        carroCompras[num][6]=carroCompras[num][6]+color+",";
+        carroCompras[num][5]=carroCompras[num][5]+""+talla;
+        carroCompras[num][6]=carroCompras[num][6]+""+color;
        // return "Se ha añadido este producto a tu compra => " + carroCompras[num][1];
        return "Se ha añadido "+carroCompras[num][3] +" "+ carroCompras[num][1];
     }
@@ -104,12 +120,23 @@ public class ServerRRMI extends UnicastRemoteObject implements RMIDAO {
     
     @Override
     public String VerCarrito()throws RemoteException{
+        int descuento=1;
+        int descuentoTotal=0;
         String MuestraCarro = "";
         for (int i = 0; i < carroCompras.length; i++) {
+            if(mensaje.equals("Se ha aplicado un descuento del 15%")){
+               descuento=15;
+               descuentoTotal=Integer.parseInt(carroCompras[i][4])/descuento;
+               int total=Integer.parseInt(carroCompras[i][4])-descuentoTotal;
+               carroCompras[i][4]=String.valueOf(total) ;
+            }
             if( Integer.parseInt(carroCompras[i][3])>0 ){
-                MuestraCarro = MuestraCarro + "Producto => "  + carroCompras[i][1] + " Cant=>" + carroCompras[i][3] + " Valor=> " + carroCompras[i][4]+ " Talla=> "+carroCompras[i][5] +" Color=> "+carroCompras[i][6] + " \n";
+                MuestraCarro =  "\n"+MuestraCarro + "Producto => "  + carroCompras[i][1] + " Cant: " + carroCompras[i][3] + " Valor: " + carroCompras[i][4] +  " Talla: " + carroCompras[i][5] +" Color: " + carroCompras[i][6] +" \n";
             }
         }
+        
+
+        
         return MuestraCarro;
     }
     
@@ -132,7 +159,7 @@ public class ServerRRMI extends UnicastRemoteObject implements RMIDAO {
      * Metodo verificar usuario
      * @param usuario
      * @param contraseña
-     * @return estado
+     * @return
      * @throws RemoteException 
      */
     
@@ -143,6 +170,78 @@ public class ServerRRMI extends UnicastRemoteObject implements RMIDAO {
                 estado=true;
         return estado;
      }
-
+    @Override 
+    public String devolverNombreUsuario ( ) throws RemoteException{
+        return nombreUsuario;
+    }
+    @Override 
+    public String devolverUsuario ( ) throws RemoteException{
+      return usuariVerdad;
+    }
+    @Override 
+    public String devolverDirección ( ) throws RemoteException{
+      return direcciónUsuario;
+    }
     
+    @Override 
+    public String cambiarNombreUsuario (String nomUs ) throws RemoteException{
+        nombreUsuario=nomUs;
+        return nombreUsuario;
+    }
+    @Override 
+    public String cambiarUsuario (String usuariNuev) throws RemoteException{
+        usuariVerdad=usuariNuev;
+      return usuariVerdad;
+    }
+
+    @Override 
+    public String cambiarDirección (String direccionNuev) throws RemoteException{
+      direcciónUsuario=  direccionNuev;
+      return direcciónUsuario;
+    } 
+    @Override 
+    public String cambiarContraseña (String contraPrueb,String contraNueva) throws RemoteException{
+      if (contraPrueb.equals(contraVerdad)){
+      contraVerdad=  contraNueva;
+      }
+      return contraVerdad;
+    }   
+    
+     @Override 
+    public int historialCompras (int comp) throws RemoteException{
+       compras=compras+comp;
+      return compras;
+    } 
+    
+    
+    @Override 
+    public String comprobarCupon (String cup) throws RemoteException{
+       
+        boolean respuesta=false;
+        for(int i=0;i<cupones.length;i++){
+          if(cup.equals(cupones[i])){
+          respuesta=true;
+          if(respuesta=true){
+          mensaje="Se ha aplicado un descuento del 15%";
+            }
+           }
+        } 
+     return mensaje;
+    }
+     @Override
+    public int añadirCompra (int compra) throws RemoteException{
+       compras=compras+compra;   
+     return compras;
+    }
+
+    @Override
+    public int verCompra ( ) throws RemoteException{
+        return compras;
+    }
+
+    @Override
+    public String Compras(int num, String talla, String color) throws RemoteException {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
 }
